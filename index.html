@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com"
+        crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+  
+    <script src="js/script.js" defer></script>
+   
+</head>
+
+<body>
+    <main class="container">
+        <div class="form-card">
+            <h1>Descobrir</h1>
+            <div class="botoes-escolha">
+                <button
+                    class="descobrir-cep-btn active">CEP</button>
+                <button
+                    class="descobrir-endereco-btn">ENDEREÇO</button>
+            </div>
+
+            <div class="descobrir-cep">
+                <form>
+                    <div class="form-row">
+                        <label for="rua">Rua</label>
+                        <input type="text" name="rua"
+                            id="rua" />
+                    </div>
+                    <div class="form-row">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" name="cidade"
+                            id="cidade" />
+                    </div>
+                    <div class="form-row">
+                        <label for="estado">Estado</label>
+                        <input type="text" name="estado"
+                            id="estado" />
+                    </div>
+                    <button
+                        id="btnBuscaCep">CONSULTAR</button>
+                </form>
+                <ul id="lista-cep"></ul>
+            </div>
+
+            <div class="descobrir-endereco hide">
+                <form>
+                    <div class="form-row">
+                        <label for="cep">CEP</label>
+                        <input type="text" name="cep"
+                            id="cep" />
+                    </div>
+                </form>
+                <button
+                    class="consultar-btn">CONSULTAR</button>
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>
