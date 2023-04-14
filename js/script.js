@@ -13,6 +13,7 @@ let uf = document.querySelector("#estado");
 let btnCep = document.querySelector("#btnBuscaCep");
 let listaCep = document.querySelector("#lista-cep");
 
+
 function hasP() {
   let hasP = formCard.querySelector("p");
   if (hasP) {
@@ -45,7 +46,7 @@ btnCep.addEventListener("click", (e) => {
   urlBase = "https://viacep.com.br/ws/";
   let parametro = uf.value + "/" + cidade.value + "/" + rua.value + "/json/";
   let callback = "?callback=descobrirCepForm";
-
+  
   let script = document.createElement("script");
   script.src = urlBase + parametro + callback;
   document.body.appendChild(script);
