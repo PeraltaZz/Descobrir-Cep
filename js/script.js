@@ -15,11 +15,10 @@ let listaCep = document.querySelector("#lista-cep");
 
 
 function hasP() {
-  let hasP = formCard.querySelector("p");
+  let hasP = descobrirCepClass.querySelector("p");
   if (hasP) {
-    formCard.removeChild(hasP);
+    descobrirCepClass.removeChild(hasP);
   }
-  cep.value = "";
 }
 
 // Show Form
@@ -28,9 +27,6 @@ cepBotao.addEventListener("click", () => {
     descobrirCepClass.classList.add("hide");
   }
   consultarCepClass.classList.toggle("hide");
-  hasP();
-
-  
 });
 
 enderecoBotao.addEventListener("click", () => {
@@ -46,10 +42,19 @@ btnCep.addEventListener("click", (e) => {
   urlBase = "https://viacep.com.br/ws/";
   let parametro = uf.value + "/" + cidade.value + "/" + rua.value + "/json/";
   let callback = "?callback=descobrirCepForm";
-  
+
   let script = document.createElement("script");
   script.src = urlBase + parametro + callback;
   document.body.appendChild(script);
+
+  if (listaCep) {
+    while (listaCep.firstChild) {
+      listaCep.removeChild(listaCep.firstChild);
+      console.log(listaCep.firstChild)
+    }
+  }
+
+  
 });
 
 function descobrirCepForm(resposta) {
@@ -87,7 +92,6 @@ function descobrirEndereco() {
     cepValue +
     "/json/?callback=descobrirEnderecoForm";
   document.body.appendChild(script);
-
   hasP();
 }
 
@@ -99,6 +103,6 @@ function descobrirEnderecoForm(i) {
     let endereco =
       i.logradouro + " - " + i.bairro + " - " + i.localidade + " - " + i.uf;
     p.innerHTML = endereco;
-    formCard.appendChild(p);
+    descobrirCepClass.appendChild(p);
   }
 }
