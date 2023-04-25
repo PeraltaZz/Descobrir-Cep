@@ -21,12 +21,14 @@
     height: 42px;
     font: 400 1.2rem/1.25 "Roboto", sans-serif;
     background: #ffffff;
-    border: 2px solid #d2cec5;
+    border: 2px solid transparent;
     border-radius: 5px;
   }
   
   select:focus {
     outline: none;
+    border-color: #005cfe;
+    box-shadow: 2px 2px 4px rgba(0, 92, 254, 0.5);
   }
   
 
